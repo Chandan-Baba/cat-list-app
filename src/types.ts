@@ -3,4 +3,10 @@ export type Cat = Readonly<{
   name: string;
 }>;
 
-export type CatList = ReadonlyArray<Cat>;
+export type CatListType = ReadonlyArray<Cat>;
+export type PaginatedListResult<T> = Readonly<{
+  results: ReadonlyArray<T>;
+  hasNextPage?: boolean;
+}>;
+
+export type CatListPaginatedResult = PaginatedListResult<CatListType>;
